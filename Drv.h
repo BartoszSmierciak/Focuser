@@ -5,7 +5,7 @@ typedef void* (*func_t)(void*, uint16_t*, int*);
 
 typedef struct
 {
-    regDrv_t* regDrv;
+    regDrv_t* Registers;
     func_t FrequencyCommand;
     func_t AccelTime;
     func_t DecelTime;

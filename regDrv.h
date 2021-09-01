@@ -22,7 +22,7 @@ typedef struct
     uint16_t FrequencySettingMethod2;
     uint16_t PIDControlStandardValueSetting;
     uint16_t PIDControlFeedbackAmount;
-}regDrvFun_t;
+}regDrv_t;
 
 regDrv_t* regDrv_new();
 

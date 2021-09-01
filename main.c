@@ -10,7 +10,7 @@ int main(void)
     Drv_t* Drv = Drv_new();
     Drv_ctor(Drv);
     
-    printf("%d\n",Drv->regDrv->FrequencyCommand);
+    printf("%d\n",Drv->Registers->FrequencyCommand);
     
     uint16_t i = 0;
     int status = 0;

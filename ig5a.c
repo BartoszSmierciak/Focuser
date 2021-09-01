@@ -5,8 +5,8 @@
 typedef struct
 {
     int address;
-    struct Fun_t* Fun;
-    //struct Reg_t* Reg;
+    //struct Fun_t* Fun;
+    struct Reg_t* Registers;
     
 }Ig5a_t;
 
@@ -17,6 +17,6 @@ Ig5a_t* Ig5a_new()
 
 void Ig5a_ctor(Ig5a_t* Ig5a, int address)
 {
-    Ig5a->Fun = Fun_new();
+    Ig5a->Registers = Reg_new();
     Ig5a->address = address;
 }
