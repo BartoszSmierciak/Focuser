@@ -1,37 +1,18 @@
 #include "Drv.h"
-
+#include "DrvReg.h"
 #include <stdlib.h>
 
 
-Drv_t* Drv_new()
+void Drv_FrequencyCommand(modbus , uint16_t* value, int* status)
 {
-    return (Drv_t*)malloc(sizeof(Drv_t));
-}
-
-void* __FrequencyCommand(void* Drv, uint16_t* value, int* status)
-{
-    Drv_t* _Drv = (Drv_t*)Drv;
-    *value = _Drv->Registers->FrequencyCommand;
+    
+    *value = modbusRead(Drv_FrequencyCommand);
     *status = 0;
 }
 
-void* __AccelTime(void* Drv, uint16_t* value, int* status)
+void Drv_AccelTime(modbus, uint16_t* value, int* status)
 {
-    Drv_t* _Drv = (Drv_t*)Drv;
-    *value = _Drv->Registers->AccelTime;
+    *value = Drv_AccelTime;
     status = 0;
 }
 
-void Drv_ctor(Drv_t* Drv)
-{
-    Drv->Registers = regDrv_new();
-    regDrv_ctor(Drv->Registers);
-    Drv->FrequencyCommand = __FrequencyCommand;
-    Drv->AccelTime = __AccelTime;
-}
-
-void Drv_dtor(Drv_t* Drv)
-{
-    regDrv_dtor(Drv->Registers);
-    free(Drv->Registers);
-}

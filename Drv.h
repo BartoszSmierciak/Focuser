@@ -3,36 +3,28 @@
 
 typedef void* (*func_t)(void*, uint16_t*, int*);
 
-typedef struct
-{
-    regDrv_t* Registers;
-    func_t FrequencyCommand;
-    func_t AccelTime;
-    func_t DecelTime;
-    func_t DriveMode;
-    func_t FrequencySettingMethod;
-    func_t MultiStepFreq1;
-    func_t MultiStepFreq2;
-    func_t MultiStepFreq3;
-    func_t OutputCurrent;
-    func_t MotorRPM;
-    func_t InverterDCLinkVoltage;
-    func_t UserDisplaySelect;
-    func_t FaultDisplay;
-    func_t DirectionOfMotorRotationSelect;
-    func_t DriveMode2;
-    func_t FrequencySettingMethod2;
-    func_t PIDControlStandardValueSetting;
-    func_t PIDControlFeedbackAmount;
+
+void Drv_FrequencyCommand(modbus, uint16_t* value, int* status);
+
+void Drv_AccelTime(modbus, uint16_t* value, int* status);
+
+
+void Drv_DecelTime;
+void Drv_DriveMode;
+void Drv_FrequencySettingMethod;
+void Drv_MultiStepFreq1;
+void Drv_MultiStepFreq2;
+void Drv_MultiStepFreq3;
+void Drv_OutputCurrent;
+void Drv_MotorRPM;
+void Drv_InverterDCLinkVoltage;
+void Drv_UserDisplaySelect;
+void Drv_FaultDisplay;
+void Drv_DirectionOfMotorRotationSelect;
+void Drv_DriveMode2;
+void Drv_FrequencySettingMethod2;
+void Drv_PIDControlStandardValueSetting;
+void Drv_PIDControlFeedbackAmount;
 }Drv_t;
 
-Drv_t* Drv_new();
-
-void Drv_ctor(Drv_t* Drv);
-
-void Drv_dtor(Drv_t* Drv);
-
-void* __FrequencyCommand(void* Drv, uint16_t* value, int* status);
-
-void* __AccelTime(void* Drv, uint16_t* value, int* status);
 
