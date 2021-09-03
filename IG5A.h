@@ -7,9 +7,10 @@ typedef struct
 {
     
     int isRun : 1;
-    int address : 8;
+    int slaveAddress : 8;
     Drv_t* Drv;
     F1_t* F1;
+    modbus_t* ctx;
     
 }IG5A_t;
 
