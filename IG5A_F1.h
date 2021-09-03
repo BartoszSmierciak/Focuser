@@ -1,0 +1,60 @@
+#include <stdint.h>
+
+typedef struct
+{
+    uint16_t JumpCode;
+    uint16_t ForvardReverseRunDisable;
+    uint16_t AccelPattern;
+    uint16_t DecelPattern;
+    uint16_t StopModeSelect;
+    uint16_t DCBrakeStartFrequency;
+    uint16_t DCBrakeWaitTime;
+    uint16_t DCBrakeVoltage;
+    uint16_t DCBrakeTime;
+    uint16_t DCBrakeStartVoltage;
+    uint16_t DCBrakeStartTime;
+    uint16_t TimeForMegnatizingAMotor;
+    uint16_t JogFrequency;
+    uint16_t MaxFrequency;
+    uint16_t BaseFrequency;
+    uint16_t StartFrequency;
+    uint16_t FrequencyHighLowLimit;
+    uint16_t FrequencyHighLimit;
+    uint16_t FrequencyLowLimit;
+    uint16_t TorqueBoostSelect;
+    uint16_t TorqueBoostInForvardDirection;
+    uint16_t TorqueBoostInReverseDirection;
+    uint16_t VFPattern;
+    uint16_t UserVFFrequency1;
+    uint16_t UserVFVoltage1;
+    uint16_t UserVFFrequency2;
+    uint16_t UserVFVoltage2;
+    uint16_t UserVFFrequency3;
+    uint16_t UserVFVoltage3;
+    uint16_t UserVFFrequency4;
+    uint16_t UserVFVoltage4;
+    uint16_t OutputVoltageAdjustments;
+    uint16_t EnergySavingLevel;
+    uint16_t ElectronicThermalSelect;
+    uint16_t ElectronicThermalLevelFor1min;
+    uint16_t ElectronicThermalLevelForCont;
+    uint16_t MotorCoolingMethod;
+    uint16_t OverloadWarningLevel;
+    uint16_t OverloadWarningTime;
+    uint16_t OverloadTripSelect;
+    uint16_t OverloadTripLevel;
+    uint16_t OverloadtripTime;
+    uint16_t StallPreventionSelect;
+    uint16_t StallPreventionLevel;
+    uint16_t StallPreventionDurDecVolLimSel;
+    uint16_t SaveUpDownFrequencySelect;
+    uint16_t SaveUpDownFrequency;
+    uint16_t UpDownModeSelect;
+    uint16_t UpDownStepFrequency;
+    uint16_t DrawnRunModeSelect;
+    uint16_t DrawRate;
+}F1_t;
+
+F1_t* F1_new();
+void Drv_ctor(F1_t* F1, modbus_t* ctx);
+void F1_dtor(F1_t* F1);

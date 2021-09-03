@@ -12,7 +12,7 @@ int ModbusInit(modbus_t* ctx, const char *device, int baud, char parity, int dat
     ctx = modbus_new_rtu(device, baud, parity, data_bit, stop_bit);
     if (modbus_connect(ctx) == -1)
     {
-        //fprintf(stderr, "Connection failed: %s\n", modbus_strerror(errno));
+        fprintf(stderr, "Connection failed: %s\n", modbus_strerror(errno));
         modbus_close(ctx);
         modbus_free(ctx);
         return -1;

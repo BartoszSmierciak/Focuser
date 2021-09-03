@@ -11,6 +11,7 @@ IG5A_t* IG5A_new()
 void IG5A_ctor(IG5A_t* IG5A, int address)
 {
     IG5A->Drv = Drv_new();
+    IG5A->F1 = F1_new();
     IG5A->isRun = 0;
     IG5A->address = address;
 }
