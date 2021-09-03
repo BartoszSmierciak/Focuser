@@ -9,7 +9,7 @@ F1_t *F1_new()
 }
 
 //Constractor
-void Drv_ctor(F1_t *F1, modbus_t *ctx)
+void F1_ctor(F1_t *F1, modbus_t *ctx)
 {
     int status = 0;
     IG5A_F1_Get_JumpCode(ctx, F1->JumpCode, &status);

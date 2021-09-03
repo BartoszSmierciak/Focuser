@@ -14,4 +14,4 @@ typedef struct
 }IG5A_t;
 
 IG5A_t* IG5A_new();
-void IG5A_ctor(IG5A_t* IG5A, int address);
+void IG5A_ctor(IG5A_t* IG5A, int address, modbus_t* ctx);

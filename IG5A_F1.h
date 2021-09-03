@@ -1,4 +1,5 @@
 #include <stdint.h>
+#include <modbus/modbus.h>
 
 typedef struct
 {
@@ -56,7 +57,7 @@ typedef struct
 }F1_t;
 
 F1_t* F1_new();
-void Drv_ctor(F1_t* F1, modbus_t* ctx);
+void F1_ctor(F1_t* F1, modbus_t* ctx);
 void F1_dtor(F1_t* F1);
 
 void IG5A_F1_Get_JumpCode(modbus_t *ctx, uint16_t *value, int *status);
