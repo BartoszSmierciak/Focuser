@@ -1,22 +1,22 @@
-#include "ig5a.h"
+#include <stdint.h>
+#include "IG5A.h"
+#include "IG5A_Drv.h"
 
-#include "ig5a_reg.h"
 
-typedef struct
+IG5A_t* IG5A_new()
 {
-    int address;
-    //struct Fun_t* Fun;
-    struct Reg_t* Registers;
-    
-}Ig5a_t;
-
-Ig5a_t* Ig5a_new()
-{
-    return (Ig5a_t*)mallock(sizeof(Ig5a_t));
+    return (IG5A_t*)mallock(sizeof(IG5A_t));
 }
 
-void Ig5a_ctor(Ig5a_t* Ig5a, int address)
+void IG5A_ctor(IG5A_t* IG5A, int address)
 {
-    Ig5a->Registers = Reg_new();
-    Ig5a->address = address;
+    IG5A->Drv = Drv_new();
+    IG5A->isRun = 0;
+    IG5A->address = address;
 }
+
+void IG5A_dtor(IG5A_t* IG5A)
+{
+    //nothing to do
+}
+
